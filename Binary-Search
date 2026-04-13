@@ -1,0 +1,62 @@
+/*Question :  Searching element in almost sorted array ,using Binary Search */
+
+
+#include <stdio.h>
+int count=0;
+
+int fun(int arr[], int n, int key){
+  int l=0,R=n-1;
+
+while (l<=R)
+{
+    int mid= (l+R)/2; 
+    count++;
+    if(arr[mid] == key ){
+      return mid;
+    }
+    count++;
+    if (arr[mid+1]==key)
+    {  
+       return mid+1;
+       
+    }
+    count++;
+    if (arr[mid-1]==key)
+    {  count++;
+       return mid-1;
+       
+    }
+    count++;
+    if (arr[mid+1]<key)
+    {
+      l=mid+2;
+    }
+    else{
+      R=mid-2;
+    }
+}
+  
+  return -1;
+  
+ }
+
+int main() {
+  int arr[7]={10,3,40,20,50,80,70};
+  
+  int n= sizeof(arr)/sizeof(arr[0]);
+  int key;
+  printf("Enter the key: ");
+  scanf("%d",&key);
+
+  int res=fun(arr,n, key);
+      if(res==-1){
+        printf("Not found");
+      }
+      else{
+        printf("Element found at index %d\n",res);
+        printf("Number of Comparison : %d",count);
+      }
+
+
+    return 0;
+}
