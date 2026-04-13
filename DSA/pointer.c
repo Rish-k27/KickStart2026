@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define S 100
 
-// Function to input array of fixed size S
+
 void input_array(int *array) {
     for (int i = 0; i < S; i++) {
         printf("Enter element %d: ", i + 1);
@@ -9,7 +9,7 @@ void input_array(int *array) {
     }
 }
 
-// Function to reverse array of fixed size S
+
 void reverse_array(int *array) {
     int temp;
     for (int i = 0; i < S / 2; i++) {
